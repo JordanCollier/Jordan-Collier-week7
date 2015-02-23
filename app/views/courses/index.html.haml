@@ -3,18 +3,21 @@
 %table
   %thead
     %tr
-      %th User Name
-      %th About
+      %th Title
+      %th day or night
   %tbody
-    - @users.each do |user|
+    - @courses.each do |course|
       %tr
         %td
-          = link_to user.user_name, user
+          = link_to course.title, course
         %td
-          = user.about
+          - if course.tod == true
+            = "day"
+          - else
+            = "night"
         %td
-          = link_to "Edit", edit_user_path(user)
+          = link_to "Edit", edit_course_path(course)
         %td
-          = link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to "Delete", course, method: :delete, data: { confirm: 'Are you sure?' }
 %br
-= link_to "Create User", new_user_path
+= link_to "Create Course", new_course_path
