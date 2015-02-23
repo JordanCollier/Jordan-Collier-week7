@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @registration = User.new(registration_params)
-    if registration.save
+    if @registration.save
       session[:user_id] = @registration.id
       redirect_to root_path, notice: "You successfully registered."
     else
