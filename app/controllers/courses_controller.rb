@@ -36,7 +36,8 @@ class CoursesController < Application
   end
 
   def destroy
-
+    @course.destroy
+    redirect_to courses_path, notice: "User was deleted my good sir"
   end
 
 private
