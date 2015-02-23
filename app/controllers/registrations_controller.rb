@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     @registration = User.new(registration_params)
     if @registration.save
       session[:user_id] = @registration.id
-      redirect_to root_path, notice: "You successfully registered."
+      redirect_to users_path, notice: "You successfully registered."
     else
       render :new
     end

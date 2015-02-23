@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, notice: "Updated like a fresh new coat of paint."
+      redirect_to users_path, notice: "Updated like a fresh coat of paint."
     else
       render :new
     end

@@ -1,4 +1,5 @@
 %h1 Sign Up
+= render "shared/error", object: @registration, error_type: "user"
 = form_for @registration, url: registrations_path do |f|
   = f.label :user_name
   = f.text_field :user_name
