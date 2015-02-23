@@ -11,10 +11,7 @@
         %td
           = link_to course.title, course
         %td
-          - if course.tod == true
-            = "day"
-          - else
-            = "night"
+          = course.time_of_day
         %td
           = link_to "Edit", edit_course_path(course)
         %td

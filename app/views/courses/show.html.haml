@@ -2,10 +2,7 @@
   = @course.title
   %br
 %h2
-  - if @course.tod == true
-    = "day"
-  - else
-    = "night"
+  = @course.time_of_day
 %h3
   = link_to "Back", courses_path
   |
