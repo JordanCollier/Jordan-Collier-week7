@@ -1,0 +1,9 @@
+%h1 Sign Up
+= form_for @registration, url: registrations_path do |f|
+  = f.label :user_name
+  = f.text_field :user_name
+  %br
+  = f.label :password
+  = f.text_field :password
+  %br
+  = f.submit
