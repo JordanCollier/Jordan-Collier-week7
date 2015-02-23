@@ -2,6 +2,7 @@
 = form_tag login_path do
   - if flash[:login_alert]
     = flash[:login_alert]
+    %br
   = label_tag :user_name
   = text_field_tag :user_name
   %br
