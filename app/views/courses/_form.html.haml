@@ -1,0 +1,9 @@
+= render "shared/error", object: @course, error_type: "user"
+= form_for @course  do |f|
+  = f.label :title
+  = f.text_field :title
+  %br
+  = f.label "Is it during the day?"
+  = f.check_box :tod
+  %br
+  = f.submit

@@ -11,9 +11,10 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = Course.new
-    if @course.save(course_params)
-      redirect_to course_path, notice: "Yeah the course was created."
+
+    @course = Course.new(course_params)
+    if @course.save
+      redirect_to courses_path, notice: "Yeah the course was created."
     else
       render :new
     end
@@ -37,7 +38,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_path, notice: "User was deleted my good sir"
+    redirect_to courses_path, notice: "Course was deleted my good sir"
   end
 
 private

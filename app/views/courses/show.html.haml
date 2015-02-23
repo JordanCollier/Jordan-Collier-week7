@@ -1,0 +1,12 @@
+%h1
+  = @course.title
+  %br
+%h2
+  - if @course.tod == true
+    = "day"
+  - else
+    = "night"
+%h3
+  = link_to "Back", courses_path
+  |
+  = link_to "Edit", edit_course_path
