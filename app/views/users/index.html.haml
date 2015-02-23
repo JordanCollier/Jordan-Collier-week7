@@ -9,6 +9,10 @@
     - @users.each do |user|
       %tr
         %td
-          = user.user_name
+          = link_to user.user_name, user
         %td
           = user.about
+        %td
+          = link_to "Edit", edit_user_path(user)
+        %td
+          = link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }

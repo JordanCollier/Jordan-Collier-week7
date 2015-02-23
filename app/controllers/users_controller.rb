@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to users_path, notice: "User was deleted my good sir"
+  end
+
   def show
 
   end
