@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    root 'registrations#new'
 
    get 'login' => 'sessions#new'
-   get 'login' => 'sessions#create'
+   post 'login' => 'sessions#create'
    get 'logout' => 'sessions#destroy'
 
   # Example of regular route:
