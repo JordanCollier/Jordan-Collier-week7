@@ -8,10 +8,12 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
 
   end
 
   def create
+    @user = User.new
     if @user.save(user_params)
       redirect_to users_path, notice: "Yeah the user was created."
     else
