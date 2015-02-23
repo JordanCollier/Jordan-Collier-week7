@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+  <%= link_to "Sign Out", logout_path %>
+  <% else %>
+  <%= link_to "Sign Up", new_registration_path %>
+  <%= link_to "Sign In", login_path %>
+  <% end %>
 
-<%= yield %>
+  <% flash.each do |type, message| %>
+  <% if type == "notice" %>
+  <bold><center><%= message %></center></bold>
+  <% elsif type == "alert" %>
+  <bold><center><%= message %></center></bold>
+  <% end %>
+  <% end %>
+
+
+
+  <%= yield %>
 
 </body>
 </html>
